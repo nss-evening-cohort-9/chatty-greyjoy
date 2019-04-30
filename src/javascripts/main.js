@@ -1,4 +1,9 @@
 import 'bootstrap';
 import '../styles/main.scss';
+import timeStamp from './helpers/timeStamp';
 
-console.error('hi');
+const init = () => {
+  timeStamp.timeStamp();
+};
+
+init();
