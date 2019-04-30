@@ -19,11 +19,11 @@ const domStringBuilder = () => {
 };
 
 const printSeedData = () => {
-  seedData.getSeedData();
-  .then((resp) => {
-    const dataResults = resp.data.msgs
-    messages = dataResults;
-    domStringBuilder();
+  seedData.getSeedData()
+    .then((resp) => {
+      const dataResults = resp.data.msgs
+      messages = dataResults;
+      domStringBuilder();
   });
-  .catch(err => console.error(err));
+    .catch(err => console.error(err));
 };
