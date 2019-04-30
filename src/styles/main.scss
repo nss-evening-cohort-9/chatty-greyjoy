@@ -1,5 +1,49 @@
 @import "~bootstrap/scss/bootstrap";
 
+$background: white;
+$darkBg: #8d8d8d;
+$lightBg: #ffffff;
+$darkFont: #ffffff;
+$lightFont: #000000;
+$bannerColor: #E49B34;
+
 body {
-  background-color: white;
+  background-color:$background;
+}
+
+#navBar {
+  background-color: $darkBg;
+  position: sticky;
+}
+
+.tagLine {
+  padding: 5px;
+  font-size: 15px;
+  margin: auto;
+  margin-left: 10px;
+}
+
+#navBarBrand {
+  font-size: 36px;
+}
+
+.icon {
+  padding: 10px;
+  margin: auto;
+  margin-right: 20px;
+  font-size: 4em;
+}
+.inputText {
+  margin: auto;
+  margin-right: 20px;
+}
+
+.clearButton {
+  margin: auto;
+  margin-right: 20px;
+  width: 260px;
+}
+
+.formClass {
+  display: flex;
 }
