@@ -1,8 +1,7 @@
-import getSeedData from '../helpers/data/seedData';
 import util from '../helpers/util';
 import seedData from '../helpers/data/seedData';
 
-const messages = [];
+let messages = [];
 
 const domStringBuilder = () => {
   let domString = '';
@@ -21,9 +20,13 @@ const domStringBuilder = () => {
 const printSeedData = () => {
   seedData.getSeedData()
     .then((resp) => {
-      const dataResults = resp.data.msgs
+      console.error(resp);
+      const dataResults = resp.data.messages;
       messages = dataResults;
+      console.error(messages);
       domStringBuilder();
-  });
+    })
     .catch(err => console.error(err));
 };
+
+export default { printSeedData };
