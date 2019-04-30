@@ -1,49 +1,295 @@
 @import "~bootstrap/scss/bootstrap";
+@import '../styles/colorsAndFonts.scss';
 
-$background: white;
-$darkBg: #8d8d8d;
-$lightBg: #ffffff;
-$darkFont: #ffffff;
-$lightFont: #000000;
-$bannerColor: #E49B34;
+
+// disable bootstrap box-sizing
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+// End disable bootstrap box-sizing
 
 body {
   background-color:$background;
+  overflow: auto;
 }
 
 #navBar {
-  background-color: $darkBg;
+  background-color: $lightBg;
   position: sticky;
+  width: 100%;
+  height: 110px;
+  // border-bottom: 40px solid linear-gradient(rgb(229,81,90), rgb(254, 51, 26));
+  background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      $bannerColor2 0%,
+      $bannerColor3 100%
+    )
+    left 
+    bottom
+    rgb(255, 255, 255)    
+    no-repeat; 
+  background-size:100% 30px;
+}
+@media only screen and (max-width: 1100px) {
+  #navBar {
+    height: auto;
+  }
 }
 
-.tagLine {
-  padding: 5px;
-  font-size: 15px;
-  margin: auto;
-  margin-left: 10px;
+.heartImg {
+  height: 100px;
+  z-index: -110;
+  position: absolute;
+  margin: 5px 0 0 10px;
 }
+
+.pinImg {
+  height: 70px;
+  z-index: -10;
+  position: absolute;
+  top: 10px;
+  left: 28px;
+}
+
+// #colorPatch {
+//   width: 70px;
+//   height: 30px;
+//   background-color: $bannerColor3;
+//   position: absolute;
+//   top: 80px;
+//   left: 25px;
+//   float: center;
+// }
+// .tagLine {
+//   padding: 5px;
+//   font-size: 15px;
+//   margin: auto;
+//   margin-left: 10px;
+// }
 
 #navBarBrand {
-  font-size: 36px;
+  font-size: 40px;
+  font-family: $fontThm1;
+  position: absolute;
+  z-index: 10;
+  left: 120px;
+  top: -8px;
+  border-bottom: $bannerColor2 solid 2px;
+  border-top: $bannerColor3 solid 2px;
+  border-right: $bannerColor2 solid 2px;
+  border-left: $bannerColor3 solid 2px;
+  box-shadow: -1px 1px 2px $bannerColor2;
+  border-radius: 7px;
+  padding: 3px;
+  margin: 20px 20px 20px 40px;
+  text-shadow: 2px 2px 2px rgb(165, 161, 161);
+}
+#navBarBrand:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 800px) {
+  #navBarBrand {
+    margin-left: 20px;
+  }
 }
 
 .icon {
   padding: 10px;
   margin: auto;
-  margin-right: 20px;
-  font-size: 4em;
+  margin: 15px -10px 0px 20px;
+  font-size: 2.2em;
+  color: $bannerColor2;
 }
+.icon:hover {
+  transition: .8s;
+  transform: scale(1.2);
+}
+@media only screen and (max-width: 860px) {
+  .icon {
+    visibility: hidden;
+  }
+}
+
+.tagLine {
+  position: absolute;
+  left: 195px;
+  top: 82px;
+  font-family: $fontThm3;
+  color: white;
+}
+
 .inputText {
   margin: auto;
-  margin-right: 20px;
+  margin: 20px 0px 20px 10px;
+  width: 450px;
+  line-height: 2.45;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid $bannerColor3!important;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
+  }
+  .inputText:hover {
+    transition: .5s;
+    box-shadow: -3px 2px 1px $bannerColor2;
+  }
+
+#commentBtn {
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-family: $fontThm3;
+    font-size: 1.2em;
+    letter-spacing: .8px;
+    height: 2.0em;
+    width: 100px;
+    border-radius: 0 10px 10px 0;
+    background-color: $bannerColor5;
+    border: 1px solid $bannerColor3!important;
+  }
+
+  #commentBtn:hover {
+    transition: .5s;
+    color: white;
+    background-color: $bannerColor2; 
+    border: 1px solid $bannerColor2!important;
+    box-shadow: 3px 2px 1px $bannerColor5;
+  }
+
+.navBtmBorder {
+  height: 45px;
+  min-height: 45px;
+  background-color: $bannerColor2;
+  position: fixed;
+  top: 100px;
 }
+@media only screen and (max-width: 1090px) {
+  #navBarBrand {
+    position: relative;
+    justify-content: center;
+    height: 50px;
+  }
+  .heartImg {
+    // visibility: hidden;
+    // position: relative;
+  }
+  .pinImg {
+    // visibility: hidden;
+    // position: relative;
+  }
+  .navRightHalf {
+    margin: auto;
+    margin-top: 50px;
+  }
+  .tagLine {
+    margin: auto;
+    margin-top: 80px;
+    position: static;
+    color: black;
+  }
+  #navBar {
+    background-size:100% 133px;
+  }
+  .icon {
+    position: relative;
+    margin: auto;
+    margin-bottom: 35px;
+    color: white;
+    left: 100px;
+    // visibility: hidden;
+    // margin: auto;
+  }
+  .inputText {
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .inputText:hover {
+    transition: .5s;
+    box-shadow: -3px 2px 1px $background;
+  }
+  #commentBtn {
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+    #commentBtn:hover {
+      transition: .5s;
+      color: black;
+      background-color: $background; 
+      border: 1px solid $bannerColor5!important;
+      box-shadow: 3px 2px 1px $bannerColor5;
+    }
+  .spanClass {
+    visibility: hidden;
+  }
+}
+
+// #userImg {
+//   font-size: 3em;
+//   margin-right: 10px;
+//   margin: auto;
+// }
 
 .clearButton {
+  background-color: $background;
+  border: 1px solid $bannerColor3;
+  border-radius: 6px;
   margin: auto;
-  margin-right: 20px;
-  width: 260px;
+  margin-top: 20px;
+  font-family: $fontThm3;
+  font-size: 2em;
+  color: $bannerColor2;
+  background-color: $bannerColor5;
 }
+  .clearButton:hover {
+    transition: 1s;
+    background-color: $bannerColor2;
+    border: 1px solid $bannerColor2;
+    color: white;
+    box-shadow: 1px 2px 1px $bannerColor3;
+  }
 
-.formClass {
-  display: flex;
+
+
+
+
+
+
+
+
+
+
+
+
+// Font tests
+.hasFont1 {
+  font-family: $fontThm1;
+}
+.hasFont2 {
+  font-family: $fontThm2;
+}
+.hasFont3 {
+  font-family: $fontThm3;
+}
+.hasFont4 {
+  font-family: $fontThm4;
+}
+.hasFont5 {
+  font-family: $fontThm5;
+}
+.hasFont6 {
+  font-family: $fontThm6;
 }
