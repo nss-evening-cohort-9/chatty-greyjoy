@@ -60,22 +60,6 @@ body {
   left: 28px;
 }
 
-// #colorPatch {
-//   width: 70px;
-//   height: 30px;
-//   background-color: $bannerColor3;
-//   position: absolute;
-//   top: 80px;
-//   left: 25px;
-//   float: center;
-// }
-// .tagLine {
-//   padding: 5px;
-//   font-size: 15px;
-//   margin: auto;
-//   margin-left: 10px;
-// }
-
 #navBarBrand {
   font-size: 40px;
   font-family: $fontThm1;
@@ -175,46 +159,47 @@ body {
   position: fixed;
   top: 100px;
 }
-@media only screen and (max-width: 1090px) {
+@media only screen and (max-width: 490px) {
   #navBarBrand {
-    position: relative;
+    position: static;
     justify-content: center;
     height: 50px;
+    font-size: 30px;
+    margin-left: 80px; 
   }
   .heartImg {
-    // visibility: hidden;
-    // position: relative;
+    height: 35px;
   }
   .pinImg {
-    // visibility: hidden;
-    // position: relative;
+    height: 30px;
+    left: 13px;
+    top: 7px;
   }
   .navRightHalf {
     margin: auto;
-    margin-top: 50px;
+    // margin-top: -30px;
   }
   .tagLine {
-    margin: auto;
-    margin-top: 80px;
-    position: static;
-    color: black;
+    visibility: hidden;
   }
   #navBar {
-    background-size:100% 133px;
+    background-size: 100% 100px;
+    width: 100%;
   }
   .icon {
-    position: relative;
-    margin: auto;
-    margin-bottom: 35px;
+    position: static;
+    margin: 20px 0px -20px 20px;
+    margin-bottom: 25px;
     color: white;
     left: 100px;
-    // visibility: hidden;
+    visibility: visible;
     // margin: auto;
   }
   .inputText {
     margin: auto;
     margin-right: 0;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    width: 200px;
   }
   .inputText:hover {
     transition: .5s;
@@ -223,7 +208,8 @@ body {
   #commentBtn {
     margin: auto;
     margin-left: 0;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    width: 60px;
   }
     #commentBtn:hover {
       transition: .5s;
@@ -236,12 +222,6 @@ body {
     visibility: hidden;
   }
 }
-
-// #userImg {
-//   font-size: 3em;
-//   margin-right: 10px;
-//   margin: auto;
-// }
 
 .clearButton {
   background-color: $background;
