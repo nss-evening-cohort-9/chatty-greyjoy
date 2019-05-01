@@ -149,9 +149,10 @@
   #navBarBrand {
     position: static;
     justify-content: center;
-    height: 50px;
+    height: 40px;
     font-size: 30px;
-    margin-left: 80px; 
+    // margin: auto;
+    margin-left: 70px; 
   }
   .heartImg {
     height: 35px;
@@ -208,4 +209,3 @@
     visibility: hidden;
   }
 }
-
