@@ -1,13 +1,14 @@
 import 'bootstrap';
 import '../styles/main.scss';
-import attachEvents from './components/buttonEvents';
-import seedMsgs from './components/getMessages';
+import attachEvents from './components/buttonEvents/buttonEvents';
+import seedMsgs from './components/getMessages/getMessages';
 import timeStamp from './helpers/timeStamp';
 
 const init = () => {
   seedMsgs.printSeedData();
   timeStamp.timeStamp();
-  attachEvents.attachEvents();
+  attachEvents.attachButton();
+  attachEvents.attachClick();
 };
 
 init();

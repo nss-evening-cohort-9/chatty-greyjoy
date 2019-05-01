@@ -1,5 +1,5 @@
-import util from '../helpers/util';
-import seedData from '../helpers/data/seedData';
+import util from '../../helpers/util';
+import seedData from '../../helpers/data/seedData';
 import './getMessages.scss';
 
 let messages = [];
