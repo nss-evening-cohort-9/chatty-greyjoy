@@ -1,0 +1,223 @@
+@import "~bootstrap/scss/bootstrap";
+@import '../styles/colorsAndFonts.scss';
+
+#navBar {
+  background-color: $lightBg;
+  position: sticky;
+  width: 100%;
+  height: 110px;
+  // border-bottom: 40px solid linear-gradient(rgb(229,81,90), rgb(254, 51, 26));
+  background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      $bannerColor2 0%,
+      $bannerColor3 100%
+    )
+    left 
+    bottom
+    rgb(255, 255, 255)    
+    no-repeat; 
+  background-size:100% 30px;
+}
+@media only screen and (max-width: 1100px) {
+  #navBar {
+    height: auto;
+  }
+}
+
+.heartImg {
+  height: 100px;
+  z-index: -110;
+  position: absolute;
+  margin: 5px 0 0 10px;
+}
+
+.pinImg {
+  height: 70px;
+  z-index: -10;
+  position: absolute;
+  top: 10px;
+  left: 28px;
+}
+
+#navBarBrand {
+  font-size: 40px;
+  font-family: $fontThm1;
+  position: absolute;
+  z-index: 10;
+  left: 120px;
+  top: -8px;
+  border-bottom: $bannerColor2 solid 2px;
+  border-top: $bannerColor3 solid 2px;
+  border-right: $bannerColor2 solid 2px;
+  border-left: $bannerColor3 solid 2px;
+  box-shadow: -1px 1px 2px $bannerColor2;
+  border-radius: 7px;
+  padding: 3px;
+  margin: 20px 20px 20px 40px;
+  text-shadow: 2px 2px 2px rgb(165, 161, 161);
+}
+#navBarBrand:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 800px) {
+  #navBarBrand {
+    margin-left: 20px;
+  }
+}
+
+.icon {
+  padding: 10px;
+  margin: auto;
+  margin: 15px -10px 0px 20px;
+  font-size: 2.2em;
+  color: $bannerColor2;
+}
+.icon:hover {
+  transition: .8s;
+  transform: scale(1.2);
+}
+@media only screen and (max-width: 860px) {
+  .icon {
+    visibility: hidden;
+  }
+}
+
+.tagLine {
+  position: absolute;
+  left: 195px;
+  top: 82px;
+  font-family: $fontThm3;
+  color: white;
+}
+
+.inputText {
+  margin: auto;
+  margin: 20px 0px 20px 10px;
+  width: 450px;
+  line-height: 2.45;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid $bannerColor3!important;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
+  }
+  .inputText:hover {
+    transition: .5s;
+    box-shadow: -3px 2px 1px $bannerColor2;
+  }
+
+#commentBtn {
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-family: $fontThm3;
+    font-size: 1.2em;
+    letter-spacing: .8px;
+    height: 2.0em;
+    width: 100px;
+    border-radius: 0 10px 10px 0;
+    background-color: $bannerColor5;
+    border: 1px solid $bannerColor3!important;
+  }
+
+  #commentBtn:hover {
+    transition: .5s;
+    color: white;
+    background-color: $bannerColor2; 
+    border: 1px solid $bannerColor2!important;
+    box-shadow: 3px 2px 1px $bannerColor5;
+  }
+
+.navBtmBorder {
+  height: 45px;
+  min-height: 45px;
+  background-color: $bannerColor2;
+  position: fixed;
+  top: 100px;
+}
+@media only screen and (max-width: 490px) {
+  #navBarBrand {
+    position: static;
+    justify-content: center;
+    height: 50px;
+    font-size: 30px;
+    margin-left: 80px; 
+  }
+  .heartImg {
+    height: 35px;
+  }
+  .pinImg {
+    height: 30px;
+    left: 13px;
+    top: 7px;
+  }
+  .navRightHalf {
+    margin: auto;
+    // margin-top: -30px;
+  }
+  .tagLine {
+    visibility: hidden;
+  }
+  #navBar {
+    background-size: 100% 100px;
+    width: 100%;
+  }
+  .icon {
+    position: static;
+    margin: 20px 0px -20px 20px;
+    margin-bottom: 25px;
+    color: white;
+    left: 100px;
+    visibility: visible;
+    // margin: auto;
+  }
+  .inputText {
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 30px;
+    width: 200px;
+  }
+  .inputText:hover {
+    transition: .5s;
+    box-shadow: -3px 2px 1px $background;
+  }
+  #commentBtn {
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 30px;
+    width: 60px;
+  }
+    #commentBtn:hover {
+      transition: .5s;
+      color: black;
+      background-color: $background; 
+      border: 1px solid $bannerColor5!important;
+      box-shadow: 3px 2px 1px $bannerColor5;
+    }
+  .spanClass {
+    visibility: hidden;
+  }
+}
+
+.clearButton {
+  background-color: $background;
+  border: 1px solid $bannerColor3;
+  border-radius: 6px;
+  margin: auto;
+  margin-top: 20px;
+  font-family: $fontThm3;
+  font-size: 2em;
+  color: $bannerColor2;
+  background-color: $bannerColor5;
+}
+  .clearButton:hover {
+    transition: 1s;
+    background-color: $bannerColor2;
+    border: 1px solid $bannerColor2;
+    color: white;
+    box-shadow: 1px 2px 1px $bannerColor3;
+  }
