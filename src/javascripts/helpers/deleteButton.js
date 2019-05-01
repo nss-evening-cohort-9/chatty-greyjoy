@@ -3,4 +3,5 @@ const deleteButton = () => {
   deleteBtn += 
 };
 
-const buttonVar = (userButtonId === 'checked') ? 'hidden' : 'visible';
+const buttonVar = (userButtonId === 'checked') ?
+'hidden' : 'visible';
