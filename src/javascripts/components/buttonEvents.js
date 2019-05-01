@@ -6,7 +6,7 @@ const addedMessage = () => {
 };
 
 const attachEvents = () => {
-  document.getElementById('tempInput').addEventListener('keyup', addedMessage);
+  document.getElementById('msgPrintingDiv').addEventListener('keyup', addedMessage);
 };
 
 export default { attachEvents };
