@@ -21,3 +21,30 @@ body {
   background-color:$background;
   overflow: auto;
 }
+
+// clear button
+.clearButton {
+  background-color: $background;
+  border: 1px solid $bannerColor3;
+  border-radius: 6px;
+  margin: auto;
+  margin-top: 120px;
+  font-family: $fontThm3;
+  font-size: 2em;
+  color: $bannerColor2;
+  background-color: $bannerColor5;
+  z-index: -1;
+}
+  .clearButton:hover {
+    transition: 1s;
+    background-color: $bannerColor2;
+    border: 1px solid $bannerColor2;
+    color: white;
+    box-shadow: 1px 2px 1px $bannerColor3;
+  }
+
+@media only screen and (max-width: 490px) {
+  .clearButton {
+    margin-top: 220px;
+  }
+}
