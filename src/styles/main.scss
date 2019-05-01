@@ -17,8 +17,12 @@
 // End disable bootstrap box-sizing
 
 body {
-  background-color:$background;
+  background-color: $background;
   overflow: auto;
+}
+
+.dark {
+  background-color: black;
 }
 
 // clear button

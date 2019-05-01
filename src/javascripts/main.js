@@ -2,7 +2,7 @@ import 'bootstrap';
 import '../styles/main.scss';
 import seedMsgs from './components/getMessages';
 import timeStamp from './helpers/timeStamp';
-import darkMode from './components/darkMode/darkMode';
+import darkMode from './components/divDomBuilder/divDomBuilder';
 // import navBar from './components/navBar/navBar';
 
 const init = () => {

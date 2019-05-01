@@ -7,7 +7,7 @@ let messages = [];
 const domStringBuilder = () => {
   let domString = '';
   messages.forEach((message) => {
-    domString += '<div class="card">';
+    domString += '<div class="card col-12">';
     domString += '<div class="card-body">';
     domString += `<div>${message.username}</div>`;
     domString += `<div>${message.message}</div>`;

@@ -1,5 +1,4 @@
 import util from '../../helpers/util';
-// import './navBar.scss';
 
 // const darkModeBG = 'navBarDM';
 // const lightModeBG = 'navBar';
@@ -25,15 +24,16 @@ const navBarBuilder = () => {
   domString += '        <input id="commentSection" class="inputText flex-shrink-1" type="text" placeholder="" aria-label="Search">';
   domString += '        <button id="commentBtn" type="submit">Comment</button>';
   domString += '      </form>';
-  domString += '  <div class="toggleDM">'; // toggle div
-  domString += '    <label class="btn inactive midnightBowl">';
-  domString += '      <input type="radio" name="darkMode" id="darkModeToggle" autocomplete="off" unchecked> Midnight Bowl';
-  domString += '    </label>';
-  domString += '  </div>'; // end toggle div
+  domString += '    <button id="darkOn" class="btn btn-success">Dark Mode</button>';
   domString += '    </div>';
+  // domString += '      <input type="checkbox" checked data-toggle="toggle">';
   domString += '  </nav>';
   domString += '</div>';
   util.printToDom('navBarPrint', domString);
+  document.getElementById('darkOn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('body').classList.add('dark');
+  });
 };
 
 export default { navBarBuilder };
