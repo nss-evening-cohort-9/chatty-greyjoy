@@ -3,10 +3,16 @@ import seedData from '../helpers/data/seedData';
 
 let messages = [];
 
+const getMessages = () => messages;
+
+const addMessages = (newMessage) => {
+  messages.push(newMessage);
+};
+
 const domStringBuilder = () => {
   let domString = '';
   messages.forEach((message) => {
-    domString += '<div class="card">';
+    domString += '<div class="card col-3">';
     domString += '<div class="card-body">';
     domString += `<div>${message.username}</div>`;
     domString += `<div>${message.message}</div>`;
@@ -20,13 +26,16 @@ const domStringBuilder = () => {
 const printSeedData = () => {
   seedData.getSeedData()
     .then((resp) => {
-      console.error(resp);
       const dataResults = resp.data.messages;
       messages = dataResults;
-      console.error(messages);
       domStringBuilder();
     })
     .catch(err => console.error(err));
 };
 
-export default { printSeedData };
+export default {
+  printSeedData,
+  domStringBuilder,
+  getMessages,
+  addMessages,
+};
