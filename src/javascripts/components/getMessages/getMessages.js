@@ -34,6 +34,24 @@ const printSeedData = () => {
     .catch(err => console.error(err));
 };
 
+// --------------Start------------------
+// -----------larger text----------------
+
+const large = document.getElementById('optionLarge');
+const regular = document.getElementById('optionRegular');
+
+
+const msgDiv = document.getElementById('msgPrintingDiv');
+
+large.addEventListener('click', () => {
+  msgDiv.style.fontSize = '150%';
+});
+regular.addEventListener('click', () => {
+  msgDiv.style.fontSize = '14px';
+});
+// -----------larger text----------------
+// --------------End--------------------
+
 export default {
   printSeedData,
   domStringBuilder,
