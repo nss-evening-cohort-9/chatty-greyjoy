@@ -1,5 +1,52 @@
 @import "~bootstrap/scss/bootstrap";
+@import '../styles/colorsAndFonts.scss';
+@import '../styles/navBar.scss';
+
+
+// disable bootstrap box-sizing
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+// End disable bootstrap box-sizing
 
 body {
-  background-color: blue;
+  background-color:$background;
+  overflow: auto;
+}
+
+// clear button
+.clearButton {
+  background-color: $background;
+  border: 1px solid $bannerColor3;
+  border-radius: 6px;
+  margin: auto;
+  margin-bottom: 250px;
+  margin-top: 20px;
+  font-family: $fontThm3;
+  font-size: 2em;
+  color: $bannerColor2;
+  background-color: $bannerColor5;
+  z-index: 1000;
+}
+.clearButton:hover {
+  transition: 1s;
+  cursor: pointer;
+  background-color: $bannerColor2;
+  border: 1px solid $bannerColor2;
+  color: white;
+  box-shadow: 1px 2px 1px $bannerColor3;
+}
+
+@media only screen and (max-width: 490px) {
+  .clearButton {
+    margin-top: 220px;
+  }
 }
