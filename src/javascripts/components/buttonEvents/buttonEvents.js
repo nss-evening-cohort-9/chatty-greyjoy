@@ -1,4 +1,5 @@
 import newMessage from '../newMessages/newMessages';
+import getMessages from '../getMessages/getMessages';
 
 const attachClick = () => {
   document.getElementById('commentSection').addEventListener('keyup', (e) => {
@@ -11,8 +12,11 @@ const attachClick = () => {
 };
 
 const attachButton = () => {
-  // e.preventDefault();
   document.getElementById('commentBtn').addEventListener('click', newMessage.newMessage);
 };
 
-export default { attachClick, attachButton };
+const clearButton = () => {
+  document.getElementById('clearButton').addEventListener('click', getMessages.clearMessages);
+};
+
+export default { attachClick, attachButton, clearButton };

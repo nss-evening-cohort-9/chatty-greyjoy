@@ -34,6 +34,10 @@ const printSeedData = () => {
     .catch(err => console.error(err));
 };
 
+const clearMessages = () => {
+  document.getElementById('msgPrintingDiv').innerHTML = '';
+};
+
 // --------------Start------------------
 // -----------larger text----------------
 
@@ -57,4 +61,5 @@ export default {
   domStringBuilder,
   getMessages,
   addMessages,
+  clearMessages,
 };

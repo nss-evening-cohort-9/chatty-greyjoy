@@ -9,6 +9,7 @@ const init = () => {
   timeStamp.timeStamp();
   attachEvents.attachButton();
   attachEvents.attachClick();
+  attachEvents.clearButton();
 };
 
 init();
