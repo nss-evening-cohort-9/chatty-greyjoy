@@ -1,13 +1,12 @@
 import 'bootstrap';
 import '../styles/main.scss';
-import seedMsgs from './components/getMessages';
 import timeStamp from './helpers/timeStamp';
-import darkMode from './components/divDomBuilder/divDomBuilder';
-// import navBar from './components/navBar/navBar';
+import divDomBuilder from './components/divDomBuilder/divDomBuilder';
+import getMessages from './components/getMessages';
 
 const init = () => {
-  darkMode.bodyDivCaller();
-  seedMsgs.printSeedData();
+  divDomBuilder.bodyDivCaller();
+  getMessages.printSeedData();
   timeStamp.timeStamp();
 };
 
