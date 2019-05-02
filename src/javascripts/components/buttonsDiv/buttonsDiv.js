@@ -8,14 +8,17 @@ const btnDivBuilder = () => {
   domString += '    <button class="styleBtn" id="optionLarge">Large Text</button>'; // button
   domString += '    <button class="styleBtn firstBtnRed" id="optionRegular">Regular Text</button>'; // button
   domString += '</div>'; // button
-  domString += '  <div id="darkOnDiv">'; // button
-  domString += '    <button id="darkOn" class="styleBtn">Dark Mode</button>'; // DARK MODE BTN
-  domString += '  </div>';
+  domString += '<div id="darkOnDiv">'; // button
+  domString += '  <button id="darkOn" class="styleBtn">Dark Mode</button>'; // DARK MODE BTN
+  domString += '</div>';
   util.printToDom('btnDivPrint', domString);
   getMessages.eventListeners();
   document.getElementById('darkOn').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('body').classList.add('dark');
+    document.querySelector('body').classList.toggle('light');
+    // if (e.target.id === 'darkOn') {
+    //   document.querySelector('body').classList.toggle('dark');
+    // }
   });
 };
 

@@ -2,7 +2,7 @@
 @import '../../../styles/colorsAndFonts.scss';
 
 #navBar {
-  background-color: $lightBg;
+  // background-color: $darkBg;
   width: 100%;
   height: 110px;
   // border-bottom: 40px solid linear-gradient(rgb(229,81,90), rgb(254, 51, 26));
@@ -21,8 +21,8 @@
 }
   #navBar:hover {
     .txtSpan {
-      transition: .5s;
       visibility: visible;
+      transition: .5s;
     }
   }
 @media only screen and (max-width: 1100px) {
@@ -30,7 +30,9 @@
     height: auto;
   }
 }
-
+#navBar {
+  background-color: $darkBg;
+}
 .heartImg {
   height: 100px;
   z-index: -110;
@@ -47,6 +49,7 @@
 }
 
 #navBarBrand {
+  color: white;
   font-size: 40px;
   font-family: $fontThm1;
   position: absolute;
@@ -77,7 +80,7 @@
   margin: auto;
   margin: 15px -10px 0px 20px;
   font-size: 2.2em;
-  color: $bannerColor2;
+  color: $background;
 }
 .icon:hover {
   transition: .8s;
@@ -101,8 +104,9 @@
   visibility: hidden;
 }
 
-
 .inputText {
+  background-color: $darkBg2;
+  color: white!important;
   margin: auto;
   margin: 20px 0px 20px 10px;
   width: 450px;
@@ -131,16 +135,16 @@
     height: 2.0em;
     width: 100px;
     border-radius: 0 10px 10px 0;
-    background-color: $bannerColor5;
     border: 1px solid $bannerColor3!important;
+    background-color: $darkBg;
+    color: white;
   }
-
   #commentBtn:hover {
     transition: .5s;
     color: white;
     background-color: $bannerColor2; 
     border: 1px solid $bannerColor2!important;
-    box-shadow: 3px 2px 1px $bannerColor5;
+    box-shadow: 3px 2px 1px $darkBg2;
   }
 
 .navBtmBorder {
@@ -214,5 +218,48 @@
     }
   .spanClass {
     visibility: hidden;
+  }
+}
+
+// DARK MODE START
+.light {
+  #navBar{
+    background-color: $background;
+  }
+  #navBarBrand {
+    color: $darkBg3;
+  }
+  .inputText {
+    background-color: white;
+    color: $darkBg3;
+  }
+  #commentBtn {
+    // background-color: $bannerColor5;
+    background:
+    linear-gradient(
+      to left, 
+      $bannerColor5 0%,
+      $bannerColor6 100%
+    );
+    color: $bannerColor3;
+  }
+  #commentBtn:hover {
+    transition: 1s;
+    color: white;
+    // background-color: $bannerColor2!important; 
+    background:
+    linear-gradient(
+      to left, 
+      $bannerColor3 0%,
+      $bannerColor2 100%
+    );
+    border: 1px solid $bannerColor2!important;
+    box-shadow: 3px 2px 1px $bannerColor5;
+  }
+  #commentBtn:hover {
+    box-shadow: 2px 2px 2px $bannerColor3;
+  }
+  .icon {
+    color: $bannerColor2;
   }
 }

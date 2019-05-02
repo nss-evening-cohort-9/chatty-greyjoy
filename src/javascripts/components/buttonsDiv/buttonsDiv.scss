@@ -2,22 +2,16 @@
 
 // sarah's buttons
 /* Start large text */
-#optionLarge {
-  // border-radius: 5px;
-}
-
-#optionRegular {
-  // border-radius: 5px;
-}
 
 #btnDivPrint {
   width: 100%;
   height: 40px;
+  position: fixed;
 }
 
 #sizeBtnContainer {
   // top: 205px;
-  background-color: $bannerColor5;
+  background-color: $darkBg3;
   margin-top: 110px;
   margin-right: 0px;
   height: 40px;
@@ -36,7 +30,7 @@
 }
 
 .styleBtn:not(#darkOn) {
-  background-color: $bannerColor2;
+  background-color: $darkBg2;
   border-radius: 7px;
   border: 1px solid white;
   margin: auto;
@@ -68,4 +62,24 @@
   color: white;
   box-shadow: 1px 1px 3px $darkBg;
 }
+#darkOn:hover {
+  transition: 1s;
+  background-color: $darkBg;
+}
 /* End large text */
+
+// DARK MODE
+.light {
+  #sizeBtnContainer {
+    background:
+    linear-gradient(
+      to left, 
+      $bannerColor6 0%,
+      $bannerColor5 100%
+    )
+  }
+  .styleBtn:not(#darkOn) {
+    color: $bannerColor2;
+    background-color: $background;
+  }
+}

@@ -17,41 +17,15 @@
 // End disable bootstrap box-sizing
 
 body {
-  background-color: $background;
+  background-color: $darkBg2;
   overflow: auto;
+  height: 100vh;
+}
+// DARK MODE  
+.light {
+    background-color: white;
 }
 
-// DARK MODE START
-.dark {
-  background-color: $darkBg;
-  #navBar{
-    background-color: $darkBg3;
-  }
-  #navBarBrand {
-    color: white;
-  }
-  .inputText {
-    background-color: $darkBg2!important;
-    color: white!important;
-  }
-  #commentBtn {
-    background-color: $darkBg;
-    color: white;
-  }
-  #commentBtn:hover {
-    box-shadow: 2px 2px 2px $bannerColor3;
-  }
-  .icon {
-    color: white;
-  }
-  #sizeBtnContainer {
-    background-color: $darkBg3;
-  }
-  .styleBtn:not(#darkOn) {
-    color: $darkBg2;
-    background-color: white;
-  }
-}
 // DARK MODE END
 
 // clear button
