@@ -35,9 +35,9 @@ export default { printSeedData };
 
 // -------------------Start--------------------------
 // -------------Message limit------------------------
-seedDataArr.push(newObj);
-if (seedDataArr.length > 19) {seedDataArr.shift();}
-domStringBuilder(seedDataArr);
+// seedDataArr.push(newObj);
+// if (seedDataArr.length > 19) {seedDataArr.shift();}
+// domStringBuilder(seedDataArr);
 
 // ----------------Messsage limit--------------------
 // ---------------------End--------------------------
