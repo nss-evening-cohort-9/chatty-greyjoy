@@ -21,46 +21,51 @@
           <p class="tagLine"><span class="txtSpan">Don't hate the player</span> || Hate the game</p> 
         </div> 
         <!-- <span id="navHr"></span> -->
-        <div class="col navRightHalf">
-          <form class="formClass row flex-no-wrap">
-            <span class="spanClass mr-auto"></span>
-            <i class="icon far fa-comment"></i>
-            <input id="commentSection" class="inputText flex-shrink-1" type="text" placeholder="" aria-label="Search">
-            <button id="commentBtn" type="submit">Comment</button>
-          </form>
-        </div>
       </nav>
     </div><!-- end navBar -->
     
+    <!--Start text size buttons-->
+    <div class="col navRightHalf">
+      <form class="formClass row flex-no-wrap">
+        <span class="spanClass mr-auto"></span>
+        <i class="icon far fa-comment"></i>
+        <input id="commentSection" class="inputText flex-shrink-1" type="text" placeholder="" aria-label="Search">
+        <button id="commentBtn" type="submit">Comment</button>
+      </form>
+    </div>
+    <div class="btn-group btn-group-toggle d-flex flex-row-reverse" id="sizeBtnContainer" data-toggle="buttons">
+      <button id="optionLarge">Large Text</button>
+      <button id="optionRegular">Regular Text</button>
+    </div>
+    <!--End text size buttons-->
   <!--Begin side bar-->
   <div class="wrapper">
-      <nav id="sidebar">
-          <div class="sidebar-header">
-              <h3>Bootstrap Sidebar</h3>
-          </div>
-          <ul class="list-unstyled components">
-              <p>Users</p>
-              <li class="active">
-                  <ul class="list-unstyled" id="homeSubmenu">
-                      <li>
-                        <input type="radio" id="joebiden666">joebiden666
-                      </li>
-                      <li>
-                          <input type="radio" id="lizwarren4u">lizwarren4u
-                      </li>
-                      <li>
-                          <input type="radio" id="axlrose">axlrose 
-                      </li>
-                      <li>
-                          <input type="radio" id="pantsuitgirl">pantsuitgirl
-                      </li>
-                      <li>
-                          <input type="radio" id="rando_bumpkin">rando_bumpkin
-                      </li>
-                  </ul>
-      </nav>
-  </div>  
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Users</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="active">
+              <li>
+                <input type="radio" id="joebiden666">joebiden666</input>
+              </li>
+              <li>
+                  <input type="radio" id="lizwarren4u">lizwarren4u
+              </li>
+              <li>
+                  <input type="radio" id="axlrose">axlrose 
+              </li>
+              <li>
+                  <input type="radio" id="pantsuitgirl">pantsuitgirl
+              </li>
+              <li>
+                  <input type="radio" id="rando_bumpkin">rando_bumpkin
+            </li>
+          </ul>
+    </nav>
+</div>  
 <!--End side bar-->
+
 
     <div id="msgPrintingDiv"></div>
 

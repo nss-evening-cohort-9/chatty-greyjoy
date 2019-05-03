@@ -6,6 +6,7 @@ let messages = [];
 
 const domStringBuilder = () => {
   let domString = '';
+  domString += '<div id="123">123</div>';
   messages.forEach((message) => {
     domString += '<div class="card">';
     domString += '<div class="card-body">';
@@ -31,3 +32,21 @@ const printSeedData = () => {
 };
 
 export default { printSeedData };
+
+// --------------Start------------------
+// -----------larger text----------------
+
+const large = document.getElementById('optionLarge');
+const regular = document.getElementById('optionRegular');
+
+
+const msgDiv = document.getElementById('msgPrintingDiv');
+
+large.addEventListener('click', () => {
+  msgDiv.style.fontSize = '150%';
+});
+regular.addEventListener('click', () => {
+  msgDiv.style.fontSize = '14px';
+});
+// -----------larger text----------------
+// --------------End--------------------
