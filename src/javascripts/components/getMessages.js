@@ -6,7 +6,6 @@ let messages = [];
 
 const domStringBuilder = () => {
   let domString = '';
-  domString += '<div id="123">123</div>';
   messages.forEach((message) => {
     domString += '<div class="card">';
     domString += '<div class="card-body">';
