@@ -17,6 +17,9 @@ const buildBold = () => {
     }
     domString += `<div>${message.message}</div>`;
     domString += `<div>${message.timeStamp}</div>`;
+    if (message.username === selection.id && selection.checked) {
+      domString += '<button type="button" class="btn btn-danger btn-sm">Delete</button>';
+    }
     domString += '</div>';
     domString += '</div>';
   });
@@ -29,6 +32,8 @@ const multipleUsers = () => {
       console.error(resp);
       const dataResults = resp.data.messages;
       boldUser = dataResults;
+      document.getElementById('guest').checked = true;
+      buildBold();
       document.getElementById('guest').addEventListener('click', buildBold);
       document.getElementById('joebiden666').addEventListener('click', buildBold);
       document.getElementById('lizwarren4u').addEventListener('click', buildBold);
