@@ -2,22 +2,24 @@ import timeStamp from '../../helpers/timeStamp';
 import getMessages from '../getMessages/getMessages';
 // import multipleUsers from '../multipleUsers';
 
+const userArr = [];
 const radios = document.getElementsByName('radio');
 
-const CurrentUser = () => {
+const currentUser = () => {
   radios.forEach((radio) => {
     if (radio.checked) {
       const user = radio.value;
-      console.error(user);
+      userArr.push(user);
     }
     return false;
   });
 };
 
 const newMessage = () => {
+  currentUser();
   // TODO - username from radio button, 'name' is a placeholder
   const newObj = {
-    username: CurrentUser(),
+    username: userArr.pop(),
     message: document.getElementById('commentSection').value,
     timeStamp: timeStamp.timeStamp(),
   };

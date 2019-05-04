@@ -19,7 +19,12 @@ const domStringBuilder = () => {
     domString += '<div class="col-12">';
     domString += '  <div class="card col-4 d-flex">';
     domString += '    <div class="card-body">';
-    domString += `     <div class="userName">${message.username}</div>`;
+    const selection = document.getElementById(`${message.username}`);
+    if (message.username === selection.id && selection.checked) {
+      domString += `<div class="userName text-warning">${message.username}</div>`;
+    } else {
+      domString += `<div class="userName">${message.username}</div>`;
+    }
     domString += `     <div class="cardBody">${message.message}</div>`;
     domString += `     <div class="timeStamp">${message.timeStamp}</div>`;
     domString += '    </div>';
