@@ -16,17 +16,17 @@
 }
 // End disable bootstrap box-sizing
 
+// DARK MODE
 body {
   background-color: $darkBg2;
   overflow: auto;
   height: 100vh;
 }
-// DARK MODE  
+  
+// DAY MODE
 .light {
-    background-color: white;
+    background-color: $background;
 }
-
-// DARK MODE END
 
 // clear button
 .clearButton {

@@ -74,8 +74,8 @@
     background:
     linear-gradient(
       to left, 
-      $bannerColor6 0%,
-      $bannerColor5 100%
+      $bannerColor5 0%,
+      $bannerColor6 100%
     )
   }
   .styleBtn:not(#darkOn) {
@@ -83,7 +83,6 @@
     background-color: $background;
   }
 }
-
 
 // toggle slider
 .switch {
@@ -107,6 +106,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
+  background-color: $bannerColor6;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -155,3 +155,24 @@ input:checked + .slider:before {
   border-radius: 50%;
 } 
 
+.nightBowl::before {
+  content: "Night Bowl";
+  font-family: $fontThm1;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  left: 44px;
+  top: -33px;
+  width: 100px;
+}
+
+.otherMode::before {
+  content: "Day Bowl";
+  font-family: $fontThm1;
+  color: $bannerColor2;
+  font-size: 16px;
+  position: absolute;
+  left: 44px;
+  top: -33px;
+  width: 100px;
+}
