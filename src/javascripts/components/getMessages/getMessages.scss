@@ -17,6 +17,7 @@
   // background-color: white;
   background-color: $cardColor;
   font-family: $fontThm3;
+  pointer-events: none;
 }
 
 .userName {
@@ -37,6 +38,10 @@
   text-align: center;
   overflow: hidden;
 }
+
+// .card-body {
+//   pointer-events: none;
+// }
 
 .timeStamp {
 

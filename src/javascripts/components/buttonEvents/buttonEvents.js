@@ -19,6 +19,23 @@ const clearButton = () => {
   document.getElementById('clearButton').addEventListener('click', getMessages.clearMessages);
 };
 
+const editButton = () => {
+  const editButtons = document.getElementsByClassName('editBtn');
+  for (let i = 0; i < editButtons.length; i += 1) {
+    editButtons[i].addEventListener('click', getMessages.editMessage);
+  }
+
+  // edit button next to the delete button that,
+  // when clicked, will take the message and put it back in the message input at the top.
+  // document.addEventListener('click', (e) => {
+  //   console.error(e.target);
+  //   if (e.target.classList.contains('editBtn')) {
+  //     console.error('hi');
+  //   }
+  // });
+};
+// editButton();
+
 const btnDivEvents = () => {
   const large = document.getElementById('optionLarge');
   const regular = document.getElementById('optionRegular');
@@ -34,5 +51,6 @@ export default {
   attachClick,
   attachButton,
   clearButton,
+  editButton,
   btnDivEvents,
 };

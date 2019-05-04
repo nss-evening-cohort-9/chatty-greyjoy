@@ -2,6 +2,7 @@ import util from '../../helpers/util';
 import seedData from '../../helpers/data/seedData';
 import './getMessages.scss';
 
+
 let messages = [];
 
 const getMessages = () => messages;
@@ -22,6 +23,7 @@ const domStringBuilder = () => {
     domString += `     <div class="userName">${message.username}</div>`;
     domString += `     <div class="cardBody">${message.message}</div>`;
     domString += `     <div class="timeStamp">${message.timeStamp}</div>`;
+    domString += '     <button type="button" class="btn btn-danger editBtn">edit message</button>';
     domString += '    </div>';
     domString += '  </div>';
     domString += '</div>';
@@ -65,10 +67,27 @@ const clearMessages = () => {
   domStringBuilder();
 };
 
+const editMessage = (e) => {
+  e.preventDefault();
+  console.error('hi');
+  // make document.getElementById('commentSection').value put
+  // the message back in the input field at the top of the page
+
+  // document.getElementById("myP").contentEditable = "true";
+
+
+// Add an edit button next to the delete button that,
+// when clicked, will take the message and put it back in the message input at the top.
+// Once user edits the message and presses the return key again,
+// the message text in the list should be updated.
+};
+
+// attachEvents.editButton();
 export default {
   printSeedData,
   domStringBuilder,
   getMessages,
   addMessages,
   clearMessages,
+  editMessage,
 };
