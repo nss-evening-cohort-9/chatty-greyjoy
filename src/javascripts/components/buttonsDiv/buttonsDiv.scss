@@ -1,0 +1,178 @@
+@import '../../../styles/colorsAndFonts.scss';
+
+// sarah's buttons
+/* Start large text */
+
+#btnDivPrint {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+}
+
+#sizeBtnContainer {
+  // top: 205px;
+  background-color: $darkBg3;
+  margin-top: -30px;
+  margin-right: 0px;
+  height: 40px;
+  border-radius: 0 0 0 80px;
+  float: right;
+  width: 300px;
+}
+
+#darkOnDiv {
+  top: 225px;
+  margin-top: -26px;
+  margin-left: 7px;
+  height: 40px;
+  border-radius: 0 7px 7px 0;  
+  float: left;
+}
+
+.styleBtn:not(#darkOn) {
+  background-color: $darkBg2;
+  border-radius: 7px;
+  border: 1px solid white;
+  margin: auto;
+  font-family: $fontThm1;
+  height: 20px;
+  color: white;
+  box-shadow: 1px 1px 3px $darkBg;
+  margin-right: -10px;
+  margin-top: 5px;
+}
+
+.firstBtnRed {
+  position: relative;
+  right: 25px;
+}
+  .styleBtn:not(#darkOn):hover {
+    transition: 1s;
+    transform: scale(1.1);
+    color: black;
+    background-color: white;
+  }
+
+#darkOn {
+  background-color: $darkBg2;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin: auto;
+  font-family: $fontThm3;
+  color: white;
+  box-shadow: 1px 1px 3px $darkBg;
+}
+#darkOn:hover {
+  transition: 1s;
+  background-color: $darkBg;
+}
+/* End large text */
+
+// DARK MODE
+.light {
+  #sizeBtnContainer {
+    background:
+    linear-gradient(
+      to left, 
+      $bannerColor5 0%,
+      $bannerColor6 100%
+    )
+  }
+  .styleBtn:not(#darkOn) {
+    color: $bannerColor2;
+    background-color: $background;
+  }
+}
+
+// toggle slider
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  background-color: $bannerColor6;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $background;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.midniteBowl {
+  position: absolute;
+  top: 40px;
+  left: 9px;
+  font-size: 12px;
+  text-align: center;
+  font-family: $fontThm3;
+}
+
+input:checked + .slider {
+  background-color: $bannerColor3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $darkBg;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+.nightBowl::before {
+  content: "Night Bowl";
+  font-family: $fontThm1;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  left: 44px;
+  top: -33px;
+  width: 100px;
+}
+
+.otherMode::before {
+  content: "Day Bowl";
+  font-family: $fontThm1;
+  color: $bannerColor2;
+  font-size: 16px;
+  position: absolute;
+  left: 44px;
+  top: -33px;
+  width: 100px;
+}

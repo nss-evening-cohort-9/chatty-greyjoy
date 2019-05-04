@@ -1,15 +1,11 @@
 import 'bootstrap';
 import '../styles/main.scss';
-import attachEvents from './components/buttonEvents/buttonEvents';
-import seedMsgs from './components/getMessages/getMessages';
 import timeStamp from './helpers/timeStamp';
+import divDomBuilder from './components/divDomBuilder/divDomBuilder';
 
 const init = () => {
-  seedMsgs.printSeedData();
+  divDomBuilder.bodyDivCaller();
   timeStamp.timeStamp();
-  attachEvents.attachButton();
-  attachEvents.attachClick();
-  attachEvents.clearButton();
 };
 
 init();
