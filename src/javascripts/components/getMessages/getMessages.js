@@ -35,7 +35,8 @@ const printSeedData = () => {
 };
 
 const clearMessages = () => {
-  document.getElementById('msgPrintingDiv').innerHTML = '';
+  messages = [];
+  domStringBuilder();
 };
 
 // --------------Start------------------
