@@ -8,7 +8,7 @@ const CurrentUser = () => {
   radios.forEach((radio) => {
     if (radio.checked) {
       const user = radio.value;
-      return user;
+      console.error(user);
     }
     return false;
   });
