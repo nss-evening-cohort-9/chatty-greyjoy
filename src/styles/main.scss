@@ -3,6 +3,7 @@
 @import '../styles/navBar.scss';
 @import './sideBar.scss';
 
+@import '../javascripts/components/navBar/navBar.scss';
 
 // disable bootstrap box-sizing
 * {
@@ -18,9 +19,16 @@
 }
 // End disable bootstrap box-sizing
 
+// DARK MODE
 body {
-  background-color:$background;
+  background-color: $darkBg2;
   overflow: auto;
+  height: 100vh;
+}
+  
+// DAY MODE
+.light {
+    background-color: $background;
 }
 
 // clear button
@@ -51,16 +59,3 @@ body {
     margin-top: 220px;
   }
 }
-/* Start large text */
-#optionLarge {
-  border-radius: 5px;
-}
-
-#optionRegular {
-  border-radius: 5px;
-}
-
-#sizeBtnContainer {
-  top: 25px;
-}
-/* End large text */
