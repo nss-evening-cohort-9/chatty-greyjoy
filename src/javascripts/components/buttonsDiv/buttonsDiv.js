@@ -1,6 +1,7 @@
 import util from '../../helpers/util';
 import './buttonsDiv.scss';
-import getMessages from '../getMessages';
+import getMessages from '../getMessages/getMessages';
+import attachEvents from '../buttonEvents/buttonEvents';
 
 const btnDivBuilder = () => {
   let domString = '';
@@ -16,9 +17,8 @@ const btnDivBuilder = () => {
   domString += '  </label>';
   domString += '</div>';
   util.printToDom('btnDivPrint', domString);
-  getMessages.eventListeners();
-  document.getElementById('darkOn').addEventListener('click', (e) => {
-    console.error(e);
+  attachEvents.btnDivEvents();
+  document.getElementById('darkOn').addEventListener('click', () => {
     const lightMode = document.querySelector('body');
     const whichMode = document.getElementById('whichMode');
     lightMode.classList.toggle('light');
@@ -31,6 +31,10 @@ const btnDivBuilder = () => {
       whichMode.classList.remove('otherMode');
     }
   });
+  getMessages.printSeedData();
+  attachEvents.attachButton();
+  attachEvents.attachClick();
+  attachEvents.clearButton();
 };
 
 export default { btnDivBuilder };

@@ -106,7 +106,7 @@
 
 .inputText {
   background-color: $darkBg2;
-  color: white!important;
+  color: white;
   margin: auto;
   margin: 20px 0px 20px 10px;
   width: 450px;
@@ -194,6 +194,7 @@
     // margin: auto;
   }
   .inputText {
+    color: black;
     margin: auto;
     margin-right: 0;
     margin-bottom: 30px;

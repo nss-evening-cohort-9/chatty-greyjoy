@@ -1,8 +1,14 @@
-import util from '../helpers/util';
-import seedData from '../helpers/data/seedData';
+import util from '../../helpers/util';
+import seedData from '../../helpers/data/seedData';
 import './getMessages.scss';
 
 let messages = [];
+
+const getMessages = () => messages;
+
+const addMessages = (newMessage) => {
+  messages.push(newMessage);
+};
 
 const domStringBuilder = () => {
   let domString = '';
@@ -33,7 +39,7 @@ const changeFont = (e) => {
 };
 
 // -----------larger text----------------
-const eventListeners = () => {
+const myListeners = () => {
   document.getElementById('optionLarge').addEventListener('click', changeFont);
   document.getElementById('optionRegular').addEventListener('click', changeFont);
 };
@@ -42,16 +48,24 @@ const eventListeners = () => {
 const printSeedData = () => {
   seedData.getSeedData()
     .then((resp) => {
-      console.error(resp);
       const dataResults = resp.data.messages;
       messages = dataResults;
-      console.error(messages);
       domStringBuilder();
     })
     .catch(err => console.error(err));
-  eventListeners();
+  myListeners();
 };
 
-// --------------End--------------------
 
-export default { printSeedData, eventListeners, changeFont };
+const clearMessages = () => {
+  messages = [];
+  domStringBuilder();
+};
+
+export default {
+  printSeedData,
+  domStringBuilder,
+  getMessages,
+  addMessages,
+  clearMessages,
+};
