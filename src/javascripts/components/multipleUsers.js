@@ -12,8 +12,9 @@ const buildBold = () => {
     const selection = document.getElementById(`${message.username}`);
     if (message.username === selection.id && selection.checked) {
       domString += `<div><strong>${message.username}</strong></div>`;
+    } else {
+      domString += `<div>${message.username}</div>`;
     }
-    domString += `<div>${message.username}</div>`;
     domString += `<div>${message.message}</div>`;
     domString += `<div>${message.timeStamp}</div>`;
     domString += '</div>';
@@ -28,6 +29,7 @@ const multipleUsers = () => {
       console.error(resp);
       const dataResults = resp.data.messages;
       boldUser = dataResults;
+      document.getElementById('guest').addEventListener('click', buildBold);
       document.getElementById('joebiden666').addEventListener('click', buildBold);
       document.getElementById('lizwarren4u').addEventListener('click', buildBold);
       document.getElementById('axlrose').addEventListener('click', buildBold);
