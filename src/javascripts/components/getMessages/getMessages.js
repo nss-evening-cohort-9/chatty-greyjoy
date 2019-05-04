@@ -8,6 +8,9 @@ const getMessages = () => messages;
 
 const addMessages = (newMessage) => {
   messages.push(newMessage);
+  if (messages.length > 20) {
+    messages.shift();
+  }
 };
 
 const domStringBuilder = () => {
