@@ -70,6 +70,7 @@ const clearMessages = () => {
 const editMessage = (e) => {
   e.preventDefault();
   console.error('hi');
+
   // make document.getElementById('commentSection').value put
   // the message back in the input field at the top of the page
 
@@ -82,7 +83,6 @@ const editMessage = (e) => {
 // the message text in the list should be updated.
 };
 
-// attachEvents.editButton();
 export default {
   printSeedData,
   domStringBuilder,
