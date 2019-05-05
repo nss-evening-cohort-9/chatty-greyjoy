@@ -15,7 +15,9 @@ const addMessages = (newMessage) => {
 
 const domStringBuilder = () => {
   let domString = '';
+  let arrayLength = 0;
   messages.forEach((message) => {
+    arrayLength += 1;
     domString += '<div class="col-12">';
     domString += '  <div class="card col-4 d-flex">';
     domString += '    <div class="card-body">';
@@ -27,12 +29,26 @@ const domStringBuilder = () => {
     }
     domString += `     <div class="cardBody">${message.message}</div>`;
     domString += `     <div class="timeStamp">${message.timeStamp}</div>`;
+    domString += `     <button id="${arrayLength}" type="button" class="btn btn-danger btn-sm">Delete</button>`;
     domString += '    </div>';
     domString += '  </div>';
     domString += '</div>';
   });
   util.printToDom('msgPrintingDiv', domString);
 };
+
+// -----START listeners for radios---------
+const userListeners = () => {
+  document.getElementById('guest').checked = true;
+  document.getElementById('guest').addEventListener('click', domStringBuilder);
+  document.getElementById('joebiden666').addEventListener('click', domStringBuilder);
+  document.getElementById('lizwarren4u').addEventListener('click', domStringBuilder);
+  document.getElementById('axlrose').addEventListener('click', domStringBuilder);
+  document.getElementById('pantsuitgirl').addEventListener('click', domStringBuilder);
+  document.getElementById('rando_bumpkin').addEventListener('click', domStringBuilder);
+};
+// -----END listeners for radios---------
+
 
 // --------------Start------------------
 
@@ -59,6 +75,7 @@ const printSeedData = () => {
       const dataResults = resp.data.messages;
       messages = dataResults;
       domStringBuilder();
+      userListeners();
     })
     .catch(err => console.error(err));
   myListeners();
