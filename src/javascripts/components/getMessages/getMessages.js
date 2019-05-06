@@ -33,15 +33,17 @@ const domStringBuilder = () => {
     domString += '    </div>';
     domString += '  </div>';
     domString += '</div>';
-    domString += `     <button id="${deleteId}" type="button" class="btn btn-danger btn-sm">Delete</button>`;
-    console.error(deleteId);
+    if (message.username === selection.id && selection.checked) {
+      domString += `     <div><button id="${deleteId}" type="button" class="btn btn-danger btn-sm">Delete</button></div>`;
+    } else {
+      domString += `     <div><button id="${deleteId}" type="button" class="invisible btn btn-danger btn-sm">Delete</button></div>`;
+    }
   });
-  console.error(messages);
   util.printToDom('msgPrintingDiv', domString);
+
   const deleteMessage = (e) => {
     if (messages[e.target.id].deleteId === e.target.id) {
       messages.splice(e.target.id, 1);
-      console.error(e.target.id);
     }
     domStringBuilder();
   };
