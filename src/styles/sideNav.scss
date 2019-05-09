@@ -7,12 +7,17 @@
   // z-index: 10; /* Stay on top */
   // top: 20; /* Stay at the top */
   left: 0;
-  background-color: white;
+  // background-color: white;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   margin-top: 55px;
   margin-left: 22px;
 }
+
+.sideNav {
+  background-color: $darkBg;
+}
+
 
 /* Style page content */
 .main {
