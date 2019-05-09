@@ -51,15 +51,6 @@ const domStringBuilder = () => {
   });
 };
 
-// messageLikes.filter(m => m.messageId === message.id && m.up).length
-
-// ```if (messageLikes.find(m => m.userId === [userId] && m.messageId ===
-// e.target.closest([something that has the message Id on it])) {
-//   // update the old object in messageLike array
-// } else {
-//  // add a new object into messageLikeArray
-// }```
-
 // --------------Change Font Start------------------
 
 const changeFont = (e) => {

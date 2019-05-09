@@ -30,6 +30,7 @@ const btnDivEvents = () => {
     msgDiv.style.fontSize = '14px';
   });
 };
+
 export default {
   attachClick,
   attachButton,
