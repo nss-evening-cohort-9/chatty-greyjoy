@@ -31,9 +31,22 @@ const btnDivEvents = () => {
   });
 };
 
+// -----START listeners for radios---------
+const userListeners = () => {
+  document.getElementById('guest').checked = true;
+  document.getElementById('guest').addEventListener('click', getMessages.domStringBuilder);
+  document.getElementById('joebiden666').addEventListener('click', getMessages.domStringBuilder);
+  document.getElementById('lizwarren4u').addEventListener('click', getMessages.domStringBuilder);
+  document.getElementById('axlrose').addEventListener('click', getMessages.domStringBuilder);
+  document.getElementById('pantsuitgirl').addEventListener('click', getMessages.domStringBuilder);
+  document.getElementById('rando_bumpkin').addEventListener('click', getMessages.domStringBuilder);
+};
+// -----END listeners for radios---------
+
 export default {
   attachClick,
   attachButton,
   clearButton,
   btnDivEvents,
+  userListeners,
 };

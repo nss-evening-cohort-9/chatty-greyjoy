@@ -15,12 +15,20 @@ const addMessages = (newMessage) => {
 
 const domStringBuilder = () => {
   let domString = '';
+  let deleteId = -1;
   const idBuilderArr = [];
   messages.forEach((message, i) => {
+    deleteId += 1;
+    messages[deleteId].deleteId = `${deleteId}`;
     domString += '<div class="col-12">';
     domString += '  <div class="card col-4 d-flex">';
     domString += '    <div class="card-body">';
-    domString += `     <div class="userName">${message.username}</div>`;
+    const selection = document.getElementById(`${message.username}`);
+    if (message.username === selection.id && selection.checked) {
+      domString += `<div class="userName text-warning">${message.username}</div>`;
+    } else {
+      domString += `<div class="userName">${message.username}</div>`;
+    }
     domString += `     <div class="cardBody">${message.message}</div>`;
     domString += `     <div class="timeStamp">${message.timeStamp}</div>`;
     domString += '     <div " class="timeStamp"></div>';
@@ -38,6 +46,17 @@ const domStringBuilder = () => {
     idBuilderArr.push(i);
   });
   util.printToDom('msgPrintingDiv', domString);
+    // -------START delete button------------
+    const deleteMessage = (e) => {
+      if (messages[e.target.id].deleteId === e.target.id) {
+        messages.splice(e.target.id, 1);
+      }
+      domStringBuilder();
+    };
+    const deleteArr = document.querySelectorAll('.btn-danger');
+    deleteArr.forEach((button) => {
+      button.addEventListener('click', deleteMessage);
+      // -------END delete button------------
   $('.likes').click((e) => {
     e.preventDefault();
     idBuilderArr.forEach((num) => {
@@ -60,8 +79,7 @@ const domStringBuilder = () => {
       }
     });
   });
-};
-
+  
 // --------------Change Font Start------------------
 
 const changeFont = (e) => {
