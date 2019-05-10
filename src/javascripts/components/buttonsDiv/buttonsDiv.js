@@ -46,6 +46,7 @@ const btnDivBuilder = () => {
   attachEvents.attachButton();
   attachEvents.attachClick();
   attachEvents.clearButton();
+  attachEvents.userListeners();
 };
 
 export default { btnDivBuilder };
