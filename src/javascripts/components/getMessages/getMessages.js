@@ -40,21 +40,19 @@ const domStringBuilder = () => {
     }
   });
   util.printToDom('msgPrintingDiv', domString);
+  // -------START delete button------------
+  const deleteMessage = (e) => {
+    if (messages[e.target.id].deleteId === e.target.id) {
+      messages.splice(e.target.id, 1);
+    }
+    domStringBuilder();
+  };
+  const deleteArr = document.querySelectorAll('.btn-danger');
+  deleteArr.forEach((button) => {
+    button.addEventListener('click', deleteMessage);
+  });
+  // -------END delete button------------
 };
-
-// -------START delete button------------
-const deleteMessage = (e) => {
-  if (messages[e.target.id].deleteId === e.target.id) {
-    messages.splice(e.target.id, 1);
-  }
-  domStringBuilder();
-};
-const deleteArr = document.querySelectorAll('.btn-danger');
-deleteArr.forEach((button) => {
-  button.addEventListener('click', deleteMessage, console.error('test'));
-});
-
-// -------END delete button------------
 
 // --------------Start------------------
 
