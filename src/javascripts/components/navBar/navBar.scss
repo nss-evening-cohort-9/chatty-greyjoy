@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import '../../../styles/colorsAndFonts.scss';
 
+.col-12 {
+  z-index: -9999;
+}
+
 #navBar {
   // background-color: $darkBg;
   width: 100%;

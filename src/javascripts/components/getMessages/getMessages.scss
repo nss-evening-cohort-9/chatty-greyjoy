@@ -4,6 +4,14 @@
   margin-top: 140px;
 }
 
+.btn-danger {
+  position: center;
+  z-index: 9999;
+  margin-left: 500%;
+  margin-right: 500%;
+  margin-bottom: 50px;
+}
+
 .card {
   z-index: -12;
   margin: auto;
@@ -38,6 +46,10 @@
   overflow: hidden;
 }
 
-.timeStamp {
+#usersHeader {
+  max-width: 200px;
+}
 
+.components {
+  max-width: 200px;
 }
