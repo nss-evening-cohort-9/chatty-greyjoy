@@ -45,20 +45,20 @@ const domStringBuilder = () => {
     domString += '</div>';
     idBuilderArr.push(i);
   });
-  util.printToDom('msgPrintingDiv', domString);
-    // -------START delete button------------
-    const deleteMessage = (e) => {
-      if (messages[e.target.id].deleteId === e.target.id) {
-        messages.splice(e.target.id, 1);
-      }
-      domStringBuilder();
-    };
-    const deleteArr = document.querySelectorAll('.btn-danger');
-    deleteArr.forEach((button) => {
-      button.addEventListener('click', deleteMessage);
-      // -------END delete button------------
+  util.printToDom('msgPrintingDiv', domString); // -------START delete button------------
+  const deleteMessage = (e) => {
+    if (messages[e.target.id].deleteId === e.target.id) {
+      messages.splice(e.target.id, 1);
+    }
+    domStringBuilder();
+  };
+  const deleteArr = document.querySelectorAll('.btn-danger');
+  deleteArr.forEach((button) => {
+    button.addEventListener('click', deleteMessage);
+  }); // -------END delete button------------
   $('.likes').click((e) => {
     e.preventDefault();
+    console.error('getting through');
     idBuilderArr.forEach((num) => {
       const theId = `unique${num}`;
       if (e.target.id === theId) {
@@ -79,7 +79,7 @@ const domStringBuilder = () => {
       }
     });
   });
-  
+};
 // --------------Change Font Start------------------
 
 const changeFont = (e) => {

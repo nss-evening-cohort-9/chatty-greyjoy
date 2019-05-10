@@ -1,5 +1,5 @@
-import newMessage from '../newMessages/newMessages';
 import getMessages from '../getMessages/getMessages';
+import newMessage from '../newMessages/newMessages';
 
 const attachClick = () => {
   document.getElementById('commentSection').addEventListener('keyup', (e) => {
