@@ -49,6 +49,11 @@ const deleteMessage = (e) => {
   }
   domStringBuilder();
 };
+const deleteArr = document.querySelectorAll('.btn-danger');
+deleteArr.forEach((button) => {
+  button.addEventListener('click', deleteMessage, console.error('test'));
+});
+
 // -------END delete button------------
 
 // --------------Start------------------
@@ -67,10 +72,6 @@ const changeFont = (e) => {
 const myListeners = () => {
   document.getElementById('optionLarge').addEventListener('click', changeFont);
   document.getElementById('optionRegular').addEventListener('click', changeFont);
-  const deleteArr = document.querySelectorAll('.btn-danger');
-  deleteArr.forEach((button) => {
-    button.addEventListener('click', deleteMessage);
-  });
 };
 // -----------larger text----------------
 
