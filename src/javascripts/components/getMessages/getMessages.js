@@ -13,6 +13,10 @@ const addMessages = (newMessage) => {
   }
 };
 
+const whatever = (e) => {
+  console.error(e);
+};
+
 const domStringBuilder = () => {
   let domString = '';
   let deleteId = -1;
@@ -58,7 +62,7 @@ const domStringBuilder = () => {
   }); // -------END delete button------------
   $('.likes').click((e) => {
     e.preventDefault();
-    console.error('getting through');
+    console.error(e);
     idBuilderArr.forEach((num) => {
       const theId = `unique${num}`;
       if (e.target.id === theId) {
@@ -79,6 +83,7 @@ const domStringBuilder = () => {
       }
     });
   });
+  // document.getElementsByClassName('likes').addEventListener('click', whatever);
 };
 // --------------Change Font Start------------------
 
@@ -121,4 +126,5 @@ export default {
   getMessages,
   addMessages,
   clearMessages,
+  whatever,
 };

@@ -55,9 +55,13 @@
   margin-top: 10px;
   width: 90px;
   height: 40px;
-  z-index: 1000;
+  position: absolute;
+  z-index: 10000;
 }
 
+.fa:hover {
+  transform: scale(1.2);
+}
 .numThumb {
   margin: 10px;
 }
