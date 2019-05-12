@@ -1,5 +1,6 @@
 import getMessages from '../getMessages/getMessages';
 import newMessage from '../newMessages/newMessages';
+// import users from '../users/users';
 
 const attachClick = () => {
   document.getElementById('commentSection').addEventListener('keyup', (e) => {
@@ -31,15 +32,19 @@ const btnDivEvents = () => {
   });
 };
 
+// const isChecked = () => {
+//   concat.isChecked = true;
+// };
+
 // -----START listeners for radios---------
 const userListeners = () => {
-  document.getElementById('guest').checked = true;
-  document.getElementById('guest').addEventListener('click', getMessages.domStringBuilder);
-  document.getElementById('joebiden666').addEventListener('click', getMessages.domStringBuilder);
-  document.getElementById('lizwarren4u').addEventListener('click', getMessages.domStringBuilder);
-  document.getElementById('axlrose').addEventListener('click', getMessages.domStringBuilder);
-  document.getElementById('pantsuitgirl').addEventListener('click', getMessages.domStringBuilder);
-  document.getElementById('rando_bumpkin').addEventListener('click', getMessages.domStringBuilder);
+  // document.getElementById('guest').checked = true;
+  // document.getElementById('guest').addEventListener('click', users.userNameDivBuilder);
+  // document.getElementById('joebiden666').addEventListener('click', users.userNameDivBuilder);
+  // document.getElementById('lizwarren4u').addEventListener('click', users.userNameDivBuilder);
+  // document.getElementById('axlrose').addEventListener('click', users.userNameDivBuilder);
+  // document.getElementById('pantsuitgirl').addEventListener('click', users.userNameDivBuilder);
+  // document.getElementById('rando_bumpkin').addEventListener('click', users.userNameDivBuilder);
 };
 // -----END listeners for radios---------
 
