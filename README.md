@@ -4,7 +4,7 @@
 A website to post about bowling (or anything related or unrelated to bowling)
 
 ## Screenshots
-![Image of the Players & Strikes website.]()
+![Image of the Players & Strikes website.](https://raw.githubusercontent.com/nss-evening-cohort-9/chatty-greyjoy/jp_thumbs/screenshots/StrikesAndPlayers.png "image of players and strikes")
 
 ## Installation Instructions
 * Clone down this repo
