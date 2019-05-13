@@ -20,6 +20,8 @@ const newMessage = () => {
     username: userArr.pop(),
     message: document.getElementById('commentSection').value,
     timeStamp: timeStamp.timeStamp(),
+    likes: [],
+    dislikes: [],
   };
   getMessages.addMessages(newObj);
   getMessages.domStringBuilder();
