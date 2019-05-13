@@ -21,7 +21,6 @@ const bodyDivCaller = () => {
   util.printToDom('bodyDivBuild', domString);
   buttonsDiv.btnDivBuilder();
   users.radioDivBuilder();
-  userListeners();
 };
 
 export default { bodyDivCaller, userListeners };

@@ -5,33 +5,53 @@ import './users.scss';
 const userNameDivBuilder = () => {
   const messages = getMessages.domStringBuilder();
   let domString = '';
-  let deleteId = -1;
-  const counter = [];
+  // let deleteId = -1;
+  let matchIdCounter = -1;
+  const userNameArr = [];
   messages.forEach((message) => {
-    // console.error(message.username);
-    deleteId += 1;
-    messages[deleteId].deleteId = `${deleteId}`;
-    domString += '<div class="card-body">';
-    const selection = document.getElementById(`${message.username}`);
-    console.error(selection.id);
-    if (message.username === selection.id && selection.checked) {
-      domString += `<div class="userName text-warning">${message.username}</div>`;
-    } else {
-      domString += `<div class="userName">${message.username}</div>`;
-    }
-    domString += `<div class="cardBody">${message.message}</div>`;
-    util.printToDom(`usersDeleteDiv${counter.length}`, domString);
-    counter.push(1);
+    userNameArr.push(message.username);
   });
-  const deleteMessage = (e) => {
-    if (getMessages.messages[e.target.id].deleteId === e.target.id) {
-      getMessages.messages.splice(e.target.id, 1);
+  userNameArr.forEach((user, i) => {
+    matchIdCounter += 1;
+    console.error(matchIdCounter);
+    console.error(i);
+    if (i === matchIdCounter) {
+      domString += `<div class="card-body">
+      <div class="userName text-warning">${user}</div>`;
+      util.printToDom(`${matchIdCounter}`, domString);
     }
-  };
-  const deleteArr = document.querySelectorAll('.btn-danger');
-  deleteArr.forEach((button) => {
-    button.addEventListener('click', deleteMessage);
-  }); // -------END delete button------------
+  });
+  // console.error(userNameArr);
+  // console.error(counter);
+  // messages.forEach((message, i) => {
+  //   if (message) {
+  //     console.error(i);
+  //     domString += `<div class="card-body">
+  //     <div class="userName text-warning">${message.username}</div>`;
+  //     util.printToDom(`usersDeleteDiv${i}`, domString);
+  //   }
+  // deleteId += 1;
+  // messages[deleteId].deleteId = `${deleteId}`;
+  // domString += '<div class="card-body">';
+  // const selection = document.getElementById(`${message.username}`);
+  // if (message.username === selection.id && selection.checked) {
+  //   domString += `<div class="userName text-warning">${message.username}</div>`;
+  // } else {
+  //   domString += `<div class="userName">${message.username}</div>`;
+  // }
+  // domString += `<div class="cardBody">${message.message}</div>`;
+  // util.printToDom(`usersDeleteDiv${counter.length}`, domString);
+  // counter.push(1);
+  // });
+  // const deleteMessage = (e) => {
+  //   if (getMessages.messages[e.target.id].deleteId === e.target.id) {
+  //     getMessages.messages.splice(e.target.id, 1);
+  //   }
+  // };
+  // const deleteArr = document.querySelectorAll('.btn-danger');
+  // deleteArr.forEach((button) => {
+  //   button.addEventListener('click', deleteMessage);
+  // }); // -------END delete button------------
 };
 
 // sideBar for User Names

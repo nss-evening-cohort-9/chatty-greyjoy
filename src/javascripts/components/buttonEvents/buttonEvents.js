@@ -37,15 +37,15 @@ const btnDivEvents = () => {
 // };
 
 // -----START listeners for radios---------
-const userListeners = () => {
-  // document.getElementById('guest').checked = true;
-  // document.getElementById('guest').addEventListener('click', users.userNameDivBuilder);
-  // document.getElementById('joebiden666').addEventListener('click', users.userNameDivBuilder);
-  // document.getElementById('lizwarren4u').addEventListener('click', users.userNameDivBuilder);
-  // document.getElementById('axlrose').addEventListener('click', users.userNameDivBuilder);
-  // document.getElementById('pantsuitgirl').addEventListener('click', users.userNameDivBuilder);
-  // document.getElementById('rando_bumpkin').addEventListener('click', users.userNameDivBuilder);
-};
+// const userListeners = () => {
+// document.getElementById('guest').checked = true;
+// document.getElementById('guest').addEventListener('click', users.userNameDivBuilder);
+// document.getElementById('joebiden666').addEventListener('click', users.userNameDivBuilder);
+// document.getElementById('lizwarren4u').addEventListener('click', users.userNameDivBuilder);
+// document.getElementById('axlrose').addEventListener('click', users.userNameDivBuilder);
+// document.getElementById('pantsuitgirl').addEventListener('click', users.userNameDivBuilder);
+// document.getElementById('rando_bumpkin').addEventListener('click', users.userNameDivBuilder);
+// };
 // -----END listeners for radios---------
 
 export default {
@@ -53,5 +53,5 @@ export default {
   attachButton,
   clearButton,
   btnDivEvents,
-  userListeners,
+  // userListeners,
 };

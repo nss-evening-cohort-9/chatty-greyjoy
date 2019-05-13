@@ -1,5 +1,7 @@
 import util from '../../helpers/util';
 import seedData from '../../helpers/data/seedData';
+import likeBtns from '../likeBtns/likeBtns';
+import $ from '../../../../node_modules/jquery';
 import './getMessages.scss';
 
 let messages = [];
@@ -11,18 +13,18 @@ const addMessages = (newMessage) => {
     messages.shift();
   }
 };
+const userNameIdCounter = [];
 
-const likeIdBuilderArr = [];
-
+// const likeIdBuilderArr = [];
 const domStringBuilder = () => {
   let domString = '';
-  const counter = [];
   messages.forEach((message, i) => {
     domString += `<div class="col-12">
                     <div class="card col-4 d-flex">
                       <div class="card-body">
-                      <div id="usersDeleteDiv${counter.length}"></div>
+                      <div class="userName" id="${message.username}${userNameIdCounter.length}">${message.username}</div>
                         <div class="timeStamp">${message.timeStamp}</div>
+                        <div class="cardBody">${message.message}</div>
                         <div class="justify-content-center timeStamp"></div>
                         <div class="row justify-content-center">
                         </div>
@@ -35,10 +37,30 @@ const domStringBuilder = () => {
                   <div class="thumbs">
                     <i id="uniquer${i}"class="dislikes fa fa-thumbs-down"><span class="numThumb">0</span></i>
                   </div>`;
-    counter.push(1);
-    likeIdBuilderArr.push(i);
+    userNameIdCounter.push(1);
+    // likeIdBuilderArr.push(i);
   });
   util.printToDom('msgPrintingDiv', domString);
+  document.getElementById('guest').checked = true;
+  const radioInput = document.querySelectorAll('.userSelector');
+  $(radioInput).click((e) => {
+    if ($(radioInput).is(':checked')) {
+      let counter = -1;
+      const changeColor = e.target.id;
+      messages.forEach((message) => {
+        counter += 1;
+        const matchId = changeColor + counter;
+        if (matchId === `${message.username}${counter}`) {
+          const userIdToChange = document.getElementById(`${message.username}${counter}`);
+          userIdToChange.classList.add('text-warning');
+        } else {
+          const userIdToChange = document.getElementById(`${message.username}${counter}`);
+          userIdToChange.classList.remove('text-warning');
+        }
+      });
+    }
+  });
+  likeBtns.likeBtnEvent();
   return messages;
 };
 
@@ -79,6 +101,6 @@ export default {
   getMessages,
   addMessages,
   clearMessages,
-  likeIdBuilderArr,
+  // likeIdBuilderArr,
   messages,
 };
