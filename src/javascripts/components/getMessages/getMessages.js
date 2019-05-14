@@ -15,17 +15,26 @@ const addMessages = (newMessage) => {
   }
 };
 
+const clearUser = () => {
+  const addColor = document.getElementsByClassName('colorChangeClass');
+  for (let i = 0; i < addColor.length; i += 1) {
+    addColor[i].classList.remove('text-warning');
+  }
+};
+
 const domStringBuilder = () => {
   let domString = '';
-  messages.forEach((message) => {
-    domString += `<div class="col-12">
+  messages.forEach((message, i) => {
+    messages[i].deleteId = `${i}`;
+    domString += `<div id="cardId${i}" class="col-12">
                     <div class="card col-4 d-flex">
                       <div class="card-body">
                       <div class="userName colorChangeClass" id="${message.username}">${message.username}</div>
                         <div class="timeStamp">${message.timeStamp}</div>
                         <div class="cardBody">${message.message}</div>
-                        <div class="justify-content-center timeStamp"></div>
                         <div class="row justify-content-center">
+                        <div class="justify-content-center timeStamp"></div>
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -36,16 +45,30 @@ const domStringBuilder = () => {
                   <div class="thumbs">
                     <i data-id="dislike_${message.id}"class="dislikes fa fa-thumbs-down"><span class="numThumb">${message.dislikes.length}</span></i>
                   </div>`;
+    const selection = document.getElementById(`${message.username}`);
+    // const radioGroup = document.getElementsByClassName('userSelector');
+    // console.error(typeof radioGroup);
+    // const something = radioGroup.find(x => message.username === selection.id && x.checked);
+    console.error(selection);
+    if ($(selection).prop('checked')) {
+      console.error(selection);
+      console.error('try');
+      domString += `<div class="davesDiv"><button id="${i}" type="button" class="btn btn-danger btn-sm">Delete</button></div>`;
+    } else {
+      // console.error('hi');
+      domString += `<div class="davesDiv"><button id="${i}" type="button" class="invisible btn btn-danger btn-sm">Delete</button></div>`;
+    }
   });
   util.printToDom('msgPrintingDiv', domString);
   document.getElementById('guest').checked = true;
   $('.userSelector').change((e) => {
+    clearUser();
     currentUser = e.target.id;
     if ($(e.target).prop('checked')) {
       const newTarget = messages.find(m => m.username === e.target.id);
+      const userColorHeader = document.getElementById(`${newTarget.username}`);
       if (newTarget.username === e.target.id) {
-        const something = document.getElementById(`${newTarget.username}`);
-        something.classList.add('text-warning');
+        userColorHeader.classList.add('text-warning');
       }
     }
   });
@@ -121,6 +144,32 @@ const clearMessages = () => {
   messages = [];
   domStringBuilder();
 };
+
+
+// let deleteId = -1;
+// deleteId += 1;
+//     messages[deleteId].deleteId = `${deleteId}`;
+
+//     const deleteArr = document.querySelectorAll('.btn-danger');
+//   deleteArr.forEach((button) => {
+//     button.addEventListener('click', deleteMessage);
+//   });
+
+// -------START delete button------------
+// const deleteMessage = (e) => {
+//   if (messages[e.target.id].deleteId === e.target.id) {
+//     messages.splice(e.target.id, 1);
+//   }
+//   domStringBuilder();
+// };
+
+
+// const deleteArr = document.getElementById('deleteBtn');
+// deleteArr.forEach((button) => {
+//   button.addEventListener('click', deleteMessage);
+// });
+// -------END delete button------------
+
 
 export default {
   printSeedData,
