@@ -26,12 +26,12 @@
 }
 
 .likes {
-  left: 135px;
+  left: 145px;
   top: -60px;
   height: 40px;
 }
 .dislikes {
-  right: 100px;
+  right: 105px;
   top: -58px;
   height: 40px;
 }
@@ -54,5 +54,44 @@
 .davesDiv {
   position: absolute;
   top: 500px;
+  left: 500px;
+  background-color: red;
+}
 
+.user_guest {
+  visibility: hidden; 
+}
+.user_joebiden666 {
+  visibility: hidden;
+}
+.user_lizwarren4u {
+  visibility: hidden;
+}
+.user_axlrose {
+  visibility: hidden;
+}
+.user_pantsuitgirl {
+  visibility: hidden;
+}
+.user_rando_bumpkin {
+  visibility: hidden;
+}
+
+.user_guest2 {
+  visibility: visible; 
+}
+.user_joebiden6662 {
+  visibility: visible;
+}
+.user_lizwarren4u2 {
+  visibility: visible;
+}
+.user_axlrose2 {
+  visibility: visible;
+}
+.user_pantsuitgirl2 {
+  visibility: visible;
+}
+.user_rando_bumpkin2 {
+  visibility: visible;
 }

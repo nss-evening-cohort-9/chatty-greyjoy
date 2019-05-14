@@ -44,20 +44,8 @@ const domStringBuilder = () => {
                   </div>
                   <div class="thumbs">
                     <i data-id="dislike_${message.id}"class="dislikes fa fa-thumbs-down"><span class="numThumb">${message.dislikes.length}</span></i>
-                  </div>`;
-    const selection = document.getElementById(`${message.username}`);
-    // const radioGroup = document.getElementsByClassName('userSelector');
-    // console.error(typeof radioGroup);
-    // const something = radioGroup.find(x => message.username === selection.id && x.checked);
-    console.error(selection);
-    if ($(selection).prop('checked')) {
-      console.error(selection);
-      console.error('try');
-      domString += `<div class="davesDiv"><button id="${i}" type="button" class="btn btn-danger btn-sm">Delete</button></div>`;
-    } else {
-      // console.error('hi');
-      domString += `<div class="davesDiv"><button id="${i}" type="button" class="invisible btn btn-danger btn-sm">Delete</button></div>`;
-    }
+                  </div>
+                  <button class="user_${message.username} btn btn-danger btn-sm" id="${i}" type="button">Delete</button>`;
   });
   util.printToDom('msgPrintingDiv', domString);
   document.getElementById('guest').checked = true;
@@ -69,6 +57,9 @@ const domStringBuilder = () => {
       const userColorHeader = document.getElementById(`${newTarget.username}`);
       if (newTarget.username === e.target.id) {
         userColorHeader.classList.add('text-warning');
+        console.error(`user_${e.target.id}`);
+        $(`.user_${e.target.id}`).removeClass(`user_${e.target.id}`);
+        $(`.user_${e.target.id}`).addClass(`user_${e.target.id}2`);
       }
     }
   });
