@@ -22,11 +22,19 @@ const clearUser = () => {
   }
 };
 
+// const deleteCardEvent = (e) => {
+//   const deleteBtnId = e.target.closest('.cardCard').id;
+//   console.error('you clicked a button!', deleteBtnId);
+//   // document.getElementById('boards-page').classList.add('hide');
+//   // document.getElementById('pins-page').classList.remove('hide');
+//   // pins.initPins(boardId);
+// };
+
 const domStringBuilder = () => {
   let domString = '';
   messages.forEach((message, i) => {
     messages[i].deleteId = `${i}`;
-    domString += `<div id="cardId${i}" class="col-12">
+    domString += `<div id="${i}" class="cardCard col-12">
                     <div class="card col-4 d-flex">
                       <div class="card-body">
                       <div class="userName colorChangeClass" id="${message.username}">${message.username}</div>
@@ -45,7 +53,7 @@ const domStringBuilder = () => {
                   <div class="thumbs">
                     <i data-id="dislike_${message.id}"class="dislikes fa fa-thumbs-down"><span class="numThumb">${message.dislikes.length}</span></i>
                   </div>
-                  <button class="user_${message.username} btn btn-danger btn-sm" id="${i}" type="button">Delete</button>`;
+                  <button class="user_${message.username} deleteBtn btn btn-sm" id="${i}" type="button">Delete</button>`;
   });
   util.printToDom('msgPrintingDiv', domString);
   document.getElementById('guest').checked = true;
@@ -57,9 +65,17 @@ const domStringBuilder = () => {
       const userColorHeader = document.getElementById(`${newTarget.username}`);
       if (newTarget.username === e.target.id) {
         userColorHeader.classList.add('text-warning');
-        console.error(`user_${e.target.id}`);
         $(`.user_${e.target.id}`).removeClass(`user_${e.target.id}`);
-        $(`.user_${e.target.id}`).addClass(`user_${e.target.id}2`);
+        const oldTarget = messages.find(m => m.username !== e.target.id);
+        if (oldTarget) {
+          // console.error('old target', oldTarget);
+          $(`.user_${e.target.id}`).addClass(`user_${e.target.id}`);
+        }
+      }
+      const deleteBtns = document.getElementsByClassName('deleteBtn');
+      for (let i = 0; i < deleteBtns.length; i += 0) {
+        console.error(deleteBtns[i]);
+        // deleteBtns[i].addEventListener('click', deleteCardEvent);
       }
     }
   });

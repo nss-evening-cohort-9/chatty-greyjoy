@@ -2,6 +2,7 @@
 
 #msgPrintingDiv {
   margin-top: 140px;
+  width: 100%;
 }
 
 .card {
@@ -29,33 +30,48 @@
   left: 145px;
   top: -60px;
   height: 40px;
+  left: 155px;
 }
 .dislikes {
-  right: 105px;
+  right: 55px;
   top: -58px;
   height: 40px;
 }
   .likes:hover {
+    transition: .7s;
     transform: scale(1.2);
   }
   .dislikes:hover {
+    transition: .7s;
     transform: scale(1.2);
   }
 
 .numThumb {
   margin: 10px;
-  color: $darkBg2;
+  color: white;
+  background-color: $bannerColor3;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 .thumbs {
   margin:auto;
 }
 
-.davesDiv {
-  position: absolute;
-  top: 500px;
-  left: 500px;
-  background-color: red;
+.deleteBtn {
+  position: relative;
+  z-index: 1000;
+  left: -595px;
+  top: -75px;
+  border: 1px solid $bannerColor3;
+  border-radius: 7px;
+  font-family: $fontThm1;
+  color: $bannerColor3;
+}
+.deleteBtn:hover {
+  transition: .7s;
+  color: white;
+  background-color: $bannerColor3;
 }
 
 .user_guest {
