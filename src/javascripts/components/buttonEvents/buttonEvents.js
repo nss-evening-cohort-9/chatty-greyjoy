@@ -36,5 +36,4 @@ export default {
   attachButton,
   clearButton,
   btnDivEvents,
-  // userListeners,
 };

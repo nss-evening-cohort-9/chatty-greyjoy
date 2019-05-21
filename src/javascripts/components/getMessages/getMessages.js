@@ -22,14 +22,6 @@ const clearUser = () => {
   }
 };
 
-// const deleteCardEvent = (e) => {
-//   const deleteBtnId = e.target.closest('.cardCard').id;
-//   console.error('you clicked a button!', deleteBtnId);
-//   // document.getElementById('boards-page').classList.add('hide');
-//   // document.getElementById('pins-page').classList.remove('hide');
-//   // pins.initPins(boardId);
-// };
-
 const domStringBuilder = () => {
   let domString = '';
   messages.forEach((message, i) => {
@@ -61,21 +53,19 @@ const domStringBuilder = () => {
     clearUser();
     currentUser = e.target.id;
     if ($(e.target).prop('checked')) {
-      const newTarget = messages.find(m => m.username === e.target.id);
+      const newTarget = messages.find(m => m.username === currentUser);
       const userColorHeader = document.getElementById(`${newTarget.username}`);
       if (newTarget.username === e.target.id) {
         userColorHeader.classList.add('text-warning');
         $(`.user_${e.target.id}`).removeClass(`user_${e.target.id}`);
-        const oldTarget = messages.find(m => m.username !== e.target.id);
+        const oldTarget = messages.find(m => m.username !== currentUser);
         if (oldTarget) {
-          // console.error('old target', oldTarget);
           $(`.user_${e.target.id}`).addClass(`user_${e.target.id}`);
         }
       }
       const deleteBtns = document.getElementsByClassName('deleteBtn');
-      for (let i = 0; i < deleteBtns.length; i += 0) {
+      for (let i = 0; i < deleteBtns.length; i += 1) {
         console.error(deleteBtns[i]);
-        // deleteBtns[i].addEventListener('click', deleteCardEvent);
       }
     }
   });
