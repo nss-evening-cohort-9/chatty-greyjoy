@@ -45,7 +45,7 @@ const domStringBuilder = () => {
                   <div class="thumbs">
                     <i data-id="dislike_${message.id}"class="dislikes fa fa-thumbs-down"><span class="numThumb">${message.dislikes.length}</span></i>
                   </div>
-                  <button class="user_${message.username} deleteBtn btn btn-sm" id="${i}" type="button">Delete</button>`;
+                  <button class="user_${message.username} deleteBtn btn btn-sm" id="btn_${i}" type="button">Delete</button>`;
   });
   util.printToDom('msgPrintingDiv', domString);
   document.getElementById('guest').checked = true;
@@ -63,9 +63,22 @@ const domStringBuilder = () => {
           $(`.user_${e.target.id}`).addClass(`user_${e.target.id}`);
         }
       }
-      const deleteBtns = document.getElementsByClassName('deleteBtn');
-      for (let i = 0; i < deleteBtns.length; i += 1) {
-        console.error(deleteBtns[i]);
+    }
+    const deleteBtns = document.getElementsByClassName('deleteBtn');
+    for (let j = 0; j < deleteBtns.length; j += 1) {
+      if (messages[j].username === e.target.id) {
+        messages.forEach((message, t) => {
+          console.error(t);
+        });
+        // so the index must be indicating where the delete button shows up
+        // and the deltet button is based on index right now with a .length on the 5 cards
+        // console.error(`${j}`);
+        messages.splice(`${j}`, 1);
+        deleteBtns[j].addEventListener('click', (event) => {
+          event.preventDefault();
+          // console.error(j);
+          domStringBuilder();
+        });
       }
     }
   });
